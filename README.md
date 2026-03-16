@@ -2,7 +2,7 @@
 ---
 ## ANNOTATIONS
 GFF3 files of segmented genome annotations including the doble strand non-overalping regions of:
-1. Portein-coding genes
+1. Protein-coding genes
 2. Curated repetitive elements
 3. Non-coding RNA families
 4. Intergeneic regions
@@ -37,7 +37,7 @@ FASTA files with the repeat libraries.
 ---
 
 ## src
-Code used for annotation, diffrential expression, enrichement, and diversity analyses. 
+Code used for annotation, differential expression, enrichement, and diversity analyses. 
 
 ---
 
