@@ -88,17 +88,17 @@ for (cont in conts) {
   
   p = ggplot(de_tbl, aes(x=Ave_CPM, y=logFC, colour = col)) +
     geom_point() +  xlab(bquote(~log[2]~' CPM')) + theme_test() +
-    ylab(bquote(~log[2]~ ' FC')) + theme(axis.title.x = element_text( size = 20), axis.text.x = element_text(size = 20)) +
-    theme(axis.title.y = element_text(size = 20),axis.text.y = element_text(size = 20)) +
+    ylab(bquote(~log[2]~ ' FC')) + theme(axis.title.x = element_text( size = 22), axis.text.x = element_text(size = 22)) +
+    theme(axis.title.y = element_text(size = 22),axis.text.y = element_text(size = 22)) +
     geom_hline(aes(yintercept = 0), colour = "red", linewidth = 1.4, linetype="dashed", alpha=0.4) + 
-    theme( strip.text = element_text(size = 18, colour = "black"))  +
+    theme(strip.text = element_text(size = 18, colour = "black"))  +
     theme(plot.title = element_text(hjust = 0.5, size = 24, face = "bold")) + 
     scale_color_manual(values = adjustcolor(cols, alpha.f = .6), labels=c(sp_cont[1], 'shared', sp_cont[2]), name=NULL) +
     ylim(c(-14,14)) +
     facet_wrap(~cont)
   
-  fp = p + theme(legend.position = "bottom", legend.text = element_text(size = 14)) +
-    guides(color = guide_legend(override.aes = list(size=10)))
+  fp = p + theme(legend.position = "bottom", legend.text = element_text(size = 18)) +
+    guides(color = guide_legend(override.aes = list(size=14))) 
   
   ma_lis[[cont]] = fp
   ####################################################################################################################################################################
@@ -137,12 +137,12 @@ for (cont in conts) {
 
 ggarrange(ma_lis$`EV_IP-Adult_IP`, 
           ma_lis$`Sup_IP-Adult_IP`,
-          ncol=2, nrow = 1)
+          ncol=1, nrow = 2)
 
-ggsave(filename = "nxHelBake1.1.exWAGO_secretion.specific.png", 
-       device = "png", dpi=300,
-       path = "./figures/", 
-       plot = last_plot(), width = 12, height = 5)
+ggsave(filename = "nxHelBake1.1.exWAGO_secretion.specific_paper.png", 
+       device = "png", dpi=600,
+       path = "~/storage/Data/ms_evo_exwago/analysis/figures/", 
+       plot = last_plot(), width = 7, height = 10)
 
 ggarrange(ma_lis$`Adult_IP-EV_IP-Sup_IP`, ma_lis$`EV_IP-Adult_IP`, 
           ma_lis$`Sup_IP-Adult_IP`, 

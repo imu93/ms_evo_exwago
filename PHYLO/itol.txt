@@ -1,0 +1,97 @@
+DATASET_COLORSTRIP
+SEPARATOR	TAB
+DATASET_LABEL	AGO_PIWI_WAGO
+COLOR	#000000
+LEGEND_TITLE	Argonaute clades
+LEGEND_SHAPES	1	1	1	1	1	1	1	1
+LEGEND_COLORS	#1b9e77	#66c2a5	#a6d854	#e6ab02	#ffd92f	#7570b3	#e7298a	#d95f02
+LEGEND_LABELS	ALG-1/2	ALG-3/4	ALG-5	RDE-1	ERGO-1	PRG-1	WAGO-core	WAGO-ex
+DATA
+
+### ALG-1/2
+C_elegans_ALG-1	#1b9e77	ALG-1/2
+C_elegans_ALG-2	#1b9e77	ALG-1/2
+A_ceylanicum_g17772	#1b9e77	ALG-1/2
+H_polygyrus_ngHelPoly1.g3918	#1b9e77	ALG-1/2
+H_bakeri_nxHelBake1.g7421	#1b9e77	ALG-1/2
+N_brasiliensis_Nippo_chrIV.g11309	#1b9e77	ALG-1/2
+T_circumcincta_TCIR_00125160	#1b9e77	ALG-1/2
+
+### ALG-3/4
+C_elegans_ALG-3	#66c2a5	ALG-3/4
+C_elegans_ALG-4	#66c2a5	ALG-3/4
+A_ceylanicum_g6923	#66c2a5	ALG-3/4
+T_circumcincta_TCIR_00189220	#66c2a5	ALG-3/4
+T_circumcincta_TCIR_00019580	#66c2a5	ALG-3/4
+H_polygyrus_ngHelPoly1.g19411	#66c2a5	ALG-3/4
+H_bakeri_nxHelBake1.g12762	#66c2a5	ALG-3/4
+N_brasiliensis_Nippo_chrI.g1816	#66c2a5	ALG-3/4
+
+### ALG-5
+C_elegans_ALG-5	#a6d854	ALG-5
+
+### RDE-1
+C_elegans_RDE-1	#e6ab02	RDE-1
+A_ceylanicum_g9550	#e6ab02	RDE-1
+T_circumcincta_TCIR_00162490	#e6ab02	RDE-1
+H_polygyrus_ngHelPoly1.g15747	#e6ab02	RDE-1
+H_bakeri_nxHelBake1.g5797	#e6ab02	RDE-1
+N_brasiliensis_Nippo_chrV.g13686	#e6ab02	RDE-1
+
+### ERGO-1
+C_elegans_ERGO-1	#ffd92f	ERGO-1
+
+### PIWI
+C_elegans_PRG-1	#7570b3	PRG-1
+A_ceylanicum_g7870	#7570b3	PRG-1
+T_circumcincta_TCIR_00047780	#7570b3	PRG-1
+H_polygyrus_ngHelPoly1.g8982	#7570b3	PRG-1
+H_bakeri_nxHelBake1.g2655	#7570b3	PRG-1
+N_brasiliensis_Nippo_chrII.g3820	#7570b3	PRG-1
+
+### WAGO-core
+C_elegans_WAGO-1	#e7298a	WAGO-core
+C_elegans_WAGO-4	#e7298a	WAGO-core
+C_elegans_WAGO-5	#e7298a	WAGO-core
+C_elegans_WAGO-10	#e7298a	WAGO-core
+C_elegans_HRDE-1	#e7298a	WAGO-core
+C_elegans_NRDE-3	#e7298a	WAGO-core
+C_elegans_CSR-1	#e7298a	WAGO-core
+C_elegans_VSRA-1	#e7298a	WAGO-core
+C_elegans_PPW-2	#e7298a	WAGO-core
+A_ceylanicum_g5460	#e7298a	WAGO-core
+A_ceylanicum_g15536	#e7298a	WAGO-core
+A_ceylanicum_g370	#e7298a	WAGO-core
+A_ceylanicum_g11867	#e7298a	WAGO-core
+A_ceylanicum_g12225	#e7298a	WAGO-core
+T_circumcincta_TCIR_00156010	#e7298a	WAGO-core
+T_circumcincta_TCIR_00044910	#e7298a	WAGO-core
+N_brasiliensis_Nippo_chrV.g12208	#e7298a	WAGO-core
+N_brasiliensis_Nippo_chrI.g1527	#e7298a	WAGO-core
+N_brasiliensis_Nippo_chrII.g3379	#e7298a	WAGO-core
+H_polygyrus_ngHelPoly1.g8478	#e7298a	WAGO-core
+H_bakeri_nxHelBake1.g1938	#e7298a	WAGO-core
+H_polygyrus_ngHelPoly1.g15706	#e7298a	WAGO-core
+H_bakeri_nxHelBake1.g5763	#e7298a	WAGO-core
+T_circumcincta_TCIR_00010150	#e7298a	WAGO-core
+H_polygyrus_ngHelPoly1.g18594	#e7298a	WAGO-core
+H_bakeri_nxHelBake1.g11958	#e7298a	WAGO-core
+T_circumcincta_TCIR_00012290	#e7298a	WAGO-core
+T_circumcincta_TCIR_10013870	#e7298a	WAGO-core
+T_circumcincta_TCIR_00222390	#e7298a	WAGO-core
+
+
+
+### WAGO-ex
+C_elegans_SAGO-1	#d95f02	WAGO-ex
+C_elegans_SAGO-2	#d95f02	WAGO-ex
+C_elegans_PPW-1	#d95f02	WAGO-ex
+N_brasiliensis_Nippo_chrI.g2549	#d95f02	WAGO-ex
+H_bakeri_nxHelBake1.g12080	#d95f02	WAGO-ex
+H_polygyrus_ngHelPoly1.g18711	#d95f02	WAGO-ex
+H_polygyrus_ngHelPoly1.g18710	#d95f02	WAGO-ex
+H_polygyrus_ngHelPoly1.g18709	#d95f02	WAGO-ex
+H_bakeri_nxHelBake1.g12076	#d95f02	WAGO-ex
+A_ceylanicum_g12302	#d95f02	WAGO-ex
+T_circumcincta_TCIR_00024660	#d95f02	WAGO-ex
+A_ceylanicum_g12301	#d95f02	WAGO-ex

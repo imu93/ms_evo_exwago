@@ -5,16 +5,16 @@ inPath_1 = "~/storage/Data/ms_evo_exwago/evo_exwago_guides/count_tables/"
 inFile_1 = "caenorhabditis_elegans.counts.1827.txt.gz" # main table
 
 
-outPath_1 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/tmm/"
-outPath_2 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/rrna_norm/"
-outPath_3 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/dge/"
-outPath_4 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/camera/class/" 
-outPath_5 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/camera/family/"
-outPath_6 = "~/storage/Data/ms_evo_exwago/analysis/figures/"
-outPath_7 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/dge_tmm/"
+outPath_1 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/tmm_gbe/"
+outPath_2 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/rrna_norm_gbe/"
+outPath_3 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/dge_gbe/"
+outPath_4 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/camera/class_gbe/" 
+outPath_5 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/camera/family_gbe/"
+outPath_6 = "~/storage/Data/ms_evo_exwago/analysis/figures_gbe/"
+outPath_7 = "~/storage/Data/ms_evo_exwago/analysis/de_tables/dge_tmm_gbe/"
 
 drs = c(outPath_1, outPath_2, outPath_3, outPath_4, outPath_5, outPath_6, outPath_7)
-#sapply(drs, dir.create)
+sapply(drs, dir.create)
 
 
 
@@ -37,17 +37,19 @@ l_fdr = rep(.05, length(conts))
 
 names(l_lfc) = names(conts)
 names(l_fdr) = names(conts)
-l_lfc["Ip_ppw1-input_ppw1"] = 2
-l_lfc["Ip_ergo1-input_ergo1"] = 2
-l_lfc["Ip_wago1-input_wago1"] = 2
-l_lfc["Ip_wago4-input_wago4"] = 2
-l_fdr["Ip_wago4-input_wago4"] = .01
-l_lfc["Ip_prg1-input_prg1"] = 2
-l_fdr["Ip_prg1-input_prg1"] = .01
-l_lfc["Ip_csr1-input_csr1"] = 2
-l_fdr["Ip_csr1-input_csr1"] = .01
-l_fdr["Ip_alg1-input_alg1"] = .01
-l_fdr["Ip_alg2-input_alg2"] = .01
+# For the final version of the paper I will use the same FC and p-value 
+# For all libraris
+#l_lfc["Ip_ppw1-input_ppw1"] = 2
+#l_lfc["Ip_ergo1-input_ergo1"] = 2
+#l_lfc["Ip_wago1-input_wago1"] = 2
+#l_lfc["Ip_wago4-input_wago4"] = 2
+#l_fdr["Ip_wago4-input_wago4"] = .01
+#l_lfc["Ip_prg1-input_prg1"] = 2
+#l_fdr["Ip_prg1-input_prg1"] = .01
+#l_lfc["Ip_csr1-input_csr1"] = 2
+#l_fdr["Ip_csr1-input_csr1"] = .01
+#l_fdr["Ip_alg1-input_alg1"] = .01
+#l_fdr["Ip_alg2-input_alg2"] = .01
 
 
 dt_lst_nonorm = list()

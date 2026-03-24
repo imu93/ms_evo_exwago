@@ -1,4 +1,4 @@
-setwd("~/storage/Data/ms_exwago_evo/analysis/repeat_comparison/")
+setwd("/home/isaac/backup/mac/Data/ms_exwago_evo/analysis/repeat_comparison/")
 pacman::p_load(dplyr, Biostrings,  ggplot2, ggpubr, ggdist)
 
 wbpFiles = list.files(path = "./wbp_libs/",pattern = ".*.fa$") 
@@ -183,8 +183,8 @@ p1 = df %>% ggplot(aes(x = class, y = log10(length), fill = set)) +
         axis.text.x = element_text(size = 14)) +
   theme(axis.title.y = element_text(face = "bold", size = 18),
         axis.text.y = element_text(size = 16)) +
-  facet_wrap(~species) + 
-  theme( strip.text = element_text(size = 14, face = "bold.italic", colour = "black")) +
+  facet_wrap(~species, ncol=1) + 
+  theme( strip.text = element_text(size = 14, face = "italic", colour = "black")) +
   theme(legend.position = "bottom") +
   theme(legend.text = element_text(size = 14)) +
   guides(color = guide_legend(override.aes = list(size=10))) 
@@ -215,6 +215,6 @@ geom_text(data = tbl_wbp,
             size = 4)
 
 
-ggsave("Fig1A.pdf", device = "pdf", 
-       width = 8, height = 6, dpi = 300, plot = last_plot(),
-       path = "~/storage/Data/ms_exwago_evo/analysis/figures/")
+ggsave("Fig1A_GBE.pdf", device = "pdf", 
+       width = 5, height = 10, dpi = 300, plot = last_plot(),
+       path = "~/storage/Data/ms_evo_exwago/analysis/figures/")

@@ -1,4 +1,4 @@
-setwd("~/storage/Data/ms_evo_exwago/analysis/de_tables/rrna_norm/cele_wagos/")
+setwd("~/storage/Data/ms_evo_exwago/analysis/de_tables/rrna_norm_gbe/")
 pacman::p_load(vegan, stringr, dplyr, edgeR, tibble, ggplot2, tidyr, kableExtra, ggpubr, patchwork)
 
 
@@ -12,10 +12,10 @@ names(files) = c("A_ceylanicum", "alg1", "alg2", "alg3", "alg4", "csr1",
 de_tabs = lapply(files, read.delim)
 
 # Now Rds containing dge objects after IP vs input dea
-dges = list.files("../../dge/cele_wagos/")
+dges = list.files("../dge_gbe/")
 dges = dges[!grepl("alg5", dges)]
 names(dges) = names(files)
-dge_lst = lapply(paste0("../../dge/cele_wagos/",dges), readRDS)
+dge_lst = lapply(paste0("../dge_gbe/",dges), readRDS)
 names(dge_lst) = names(dges)
 # I will estimate average CPM
 ave_cpm = lapply(dge_lst, function(x){cpmByGroup(x, prior.count = 0.01)})
@@ -70,13 +70,13 @@ for (i in names(counts)) {
 }
 df = do.call(rbind, lst1)
 
-write.table(df, "agos_count_diversity.txt", sep = "\t", quote = F)
+write.table(df, "agos_count_diversity_gbe.txt", sep = "\t", quote = F)
 
 
 shannon = diversity(df, index = "shannon", MARGIN = 1) 
 simpson = diversity(df, index = "simpson", MARGIN = 1) 
 
-shannon[parasites] %>% mean()
+simpson[setdiff(names(shannon), c(parasites,"alg1", "alg2", "alg3","alg4", "prg1"))] %>% sd
 
 index = rbind(shannon, simpson)
 index = round(index,3)
@@ -117,7 +117,7 @@ p0 = ggplot(index_long, aes(x = reorder(AGO, Diversity), y = Diversity, fill = I
     strip.text = element_text(size = 15))
 
 ggsave("ago_diversity_no_rarefly.pdf", device = "pdf", width = 6, height = 7, dpi = 300, 
-       path = "~/storage/Data/ms_evo_exwago/analysis/figures/", plot = p0)
+       path = "~/storage/Data/ms_evo_exwago/analysis/figures_gbe", plot = p0)
   
 # Define parasite names
 parasites <- c("H_bakeri", "H_polygyrus", "N_brasiliensis", "T_circumcincta", "A_ceylanicum")
@@ -129,6 +129,8 @@ index_long <- index_clean %>%
     Group = ifelse(AGO %in% parasites, "exWAGO (parasites)", "C. elegans AGOs")
   )
 
+
+index_long[index_long$Group == "C. elegans AGOs",] %>%  as.data.frame()
 
 p1 <- index_long %>%
   filter(Index == "shannon") %>% mutate(exp = "Shannon Diversity") %>% 
@@ -351,6 +353,9 @@ p22 <- index_long2 %>%
     legend.position = "bottom",
     strip.text = element_text(size = 15)) +
   facet_wrap(~exp)
+
+ggsave("raref_ago_diversity_gbe.pdf", device = "pdf", width = 8, height = 10, dpi = 600, 
+       path = "~/storage/Data/ms_evo_exwago/analysis/figures_gbe/", plot = p02)
 
 
 top_row = ggarrange(panel_A, p02, labels = c("A", "B"), ncol = 2, widths = c(1.4, 1))
